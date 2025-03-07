@@ -102,7 +102,6 @@ ollama run deepseek-r1:8b
 2. **Ollama服务容器**：大脑在线，随时待命！🧠
 
 **网络配置**：
-
 - 内部网络：`ragchat-network`（小团队的秘密基地！）
 - 端口映射：`8888`（RAGChat），`11434`（Ollama）
 
@@ -113,4 +112,5 @@ ollama run deepseek-r1:8b
 # 🎉 快来试试吧！
 
 这个RAG系统不仅聪明，还超有趣！快丢个PDF进来，看看它能给你讲出什么故事！📖✨
+
 
