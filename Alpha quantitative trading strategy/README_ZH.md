@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
 
-[English](README.md) | **中文**
+[English](README_EN.md) | **中文**
 
 本项目为A股市场提供了一个市场情绪打分的量化系统。它利用历史和实时的股票数据，基于涨跌停比率、连板股表现等关键指标计算出一个情绪指数（0-100分）。该系统帮助交易者和投资者衡量市场情绪，动态调整仓位，并有效管理风险。
 
