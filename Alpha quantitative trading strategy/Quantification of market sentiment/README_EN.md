@@ -99,20 +99,6 @@ Historical normalization (e.g., 60-day window) ensures scores are contextualized
 - **Strategy Aid**: Input for stock selection/timing.
 - **Markets**: Primarily A-shares; adaptable to HK/US with adjustments.
 
-## Common Errors and Optimization Suggestions
-
-### Errors:
-- Incomplete data/API failures.
-- Poor normalization windows.
-- Subjective weights.
-- Ignoring special cases (e.g., ST stocks).
-
-### Suggestions:
-- Add factors (e.g., dragon-tiger lists, margin balances, news NLP).
-- Dynamic weights via ML.
-- Multi-market adaptation.
-- Visualization dashboards for real-time monitoring.
-
 ## Installation
 
 1. Clone the repo:
