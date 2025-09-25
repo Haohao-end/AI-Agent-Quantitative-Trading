@@ -1,4 +1,4 @@
-```markdown
+
 # Alpha Quantitative Trading Strategy: Market Sentiment Quantification
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -156,4 +156,3 @@ Pull requests welcome! For major changes, open an issue first. Ensure code follo
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details (add one if needed).
-```
