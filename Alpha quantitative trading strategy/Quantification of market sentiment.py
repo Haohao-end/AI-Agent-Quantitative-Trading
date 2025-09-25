@@ -1,18 +1,12 @@
-import re
 import tushare as ts
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
 from openai import OpenAI
-import requests
-import json
 import certifi
 import os
 import time
 import sys
-from typing import Optional, Dict, Any
-import random
-from bs4 import BeautifulSoup
 # 设置 SSL 证书路径
 os.environ['SSL_CERT_FILE'] = certifi.where()
 
@@ -570,3 +564,4 @@ def save_report_to_file(result, filename=None):
 if __name__ == "__main__":
     result = calc_sentiment_score('20250923')
     save_report_to_file(result)
+
