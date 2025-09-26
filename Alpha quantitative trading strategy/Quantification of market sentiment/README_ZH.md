@@ -103,7 +103,7 @@
 
 1.  克隆仓库：
     ```bash
-    git clone https://github.com/yourusername/alpha-quant-strategy.git](https://github.com/Haohao-end/AI-Agent-Quantitative-Trading.git
+    git clone https://github.com/Haohao-end/AI-Agent-Quantitative-Trading.git
     cd alpha-quant-strategy
     ```
 2.  安装依赖：
