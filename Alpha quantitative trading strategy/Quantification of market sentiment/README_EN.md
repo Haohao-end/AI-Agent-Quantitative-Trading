@@ -103,7 +103,7 @@ Historical normalization (e.g., 60-day window) ensures scores are contextualized
 
 1. Clone the repo:
    ```
-   git clone https://github.com/yourusername/alpha-quant-strategy.git
+   git clone https://github.com/Haohao-end/AI-Agent-Quantitative-Trading.git
    cd alpha-quant-strategy
    ```
 2. Install dependencies:
