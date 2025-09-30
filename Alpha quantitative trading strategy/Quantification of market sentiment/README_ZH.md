@@ -128,7 +128,7 @@ python "Quantification of market sentiment.py"
 项目文件夹 `Alpha quantitative trading strategy` 包含：
 
 - **[Quantification of market sentiment.py](Quantification%20of%20market%20sentiment.py)**：情绪计算和AI分析的主要Python源代码。
-- **[README.md](README.md)**：本文档文件（英文版）。
+- **[README_EN.md](README.md)**：本文档文件（英文版）。
 - **[README_ZH.md](README_ZH.md)**：本文档的中文翻译版。
 - **[market_sentiment_report.md](market_sentiment_report.md)**：代码执行生成的报告（例如，针对日期20250923）。
 - **[output result on the console.md](output%20result%20on%20the%20console.md)**：示例运行的控制台输出记录。
