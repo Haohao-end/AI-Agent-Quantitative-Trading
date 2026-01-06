@@ -6,11 +6,11 @@
 
 An advanced, multi-agent intelligent service system based on **LangChain** and **LangGraph**, designed to simulate a professional travel agency (Ctrip-style). The system handles complex, multi-turn dialogues and dynamic task execution across flight booking, hotel reservations, car rentals, and tour planning.
 
-## 🚀 Project Background
+## Project Background
 
 Traditional chatbot systems often struggle with state management in long-running conversations and the safe execution of sensitive operations. This project implements a **Stateful Multi-Agent Orchestration** architecture that manages task delegation, tool-calling permissions, and human-in-the-loop (HITL) verification.
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 The system is built on a "Hub-and-Spoke" architecture:
 - **Primary Assistant:** The central router that identifies intent and delegates tasks.
@@ -24,7 +24,7 @@ The system is built on a "Hub-and-Spoke" architecture:
 3.  **Human-in-the-Loop:** Automated workflow interruption (`interrupt_before`) for sensitive operations, requiring user confirmation before database modification.
 4.  **Context Persistence:** Utilizes `MemorySaver` to ensure seamless dialogue recovery across different sessions or interruptions.
 
-## 🛠️ Detailed Tool Modules
+## Detailed Tool Modules
 
 | Category | Safe Tools (Read) | Sensitive Tools (Write) |
 | :--- | :--- | :--- |
@@ -34,7 +34,7 @@ The system is built on a "Hub-and-Spoke" architecture:
 | **Activities** | `search_trip_recommendations` | `book_excursion`, `cancel_excursion` |
 | **General** | `tavily_tool`, `lookup_policy` | - |
 
-## 🧠 State Machine Implementation
+## State Machine Implementation
 
 ### Dialogue Stack Management
 We use a custom `update_dialog_stack` function to manage the focus of the conversation. When a sub-agent completes its task or the user changes context, the stack "pops," returning control to the Primary Assistant.
@@ -71,7 +71,7 @@ Sub-agents are equipped with a `CompleteOrEscalate` tool. This allows them to gr
    pip install -r requirements.txt
    ```
 
-## 💻 Usage
+## Usage
 
 Run the main script to start the interactive CLI:
 
@@ -86,18 +86,18 @@ python main.py
 4. **Approval Loop:** If you attempt to "Cancel a Ticket," the system will pause and ask:
    > *“Do you approve this operation? Input 'y' to continue.”*
 
-## 🛡️ Error Handling
+## Error Handling
 
 The system implements a `create_tool_node_with_fallback` mechanism. If a tool fails (API timeout or invalid parameters), the `handle_tool_error` function catches the exception and prompts the LLM to fix its query without crashing the workflow.
 
-## 📊 Workflow Graph
+## Workflow Graph
 
 *(Recommendation: Use LangGraph's `get_graph().draw_mermaid_png()` to generate a visual and place it here)*
 
 - **Nodes:** `primary_assistant`, `update_flight`, `book_hotel`, `leave_skill`, etc.
 - **Edges:** Conditional routing based on `dialog_state` and tool calls.
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
