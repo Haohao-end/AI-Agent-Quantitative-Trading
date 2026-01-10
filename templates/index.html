@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Consultation Chatbot</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f9f9fb;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        label {
+            font-weight: 600;
+            font-size: 1.1em;
+            color: #34495e;
+        }
+        input[type="text"] {
+            padding: 12px 15px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        button {
+            padding: 12px 20px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: white;
+            background-color: #3498db;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .history {
+            margin-top: 30px;
+        }
+        .message {
+            margin-bottom: 25px;
+            padding: 15px 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .user-message {
+            background-color: #e3f2fd;
+            margin-left: 15%;
+            border-top-left-radius: 0;
+        }
+        .ai-message {
+            background-color: #f0f0f0;
+            margin-right: 15%;
+            border-top-right-radius: 0;
+        }
+        .message h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+        .message p {
+            margin: 0;
+            word-wrap: break-word;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Medical Consultation Chatbot</h1>
+        <p style="text-align:center; color:#555; margin-bottom:30px;">
+            Ask medical-related questions and receive AI-generated responses based on a fine-tuned GPT-2 model.
+        </p>
+
+        <form action="/ask" method="post">
+            <label for="user_input">Your Question:</label>
+            <input type="text" id="user_input" name="user_input" placeholder="e.g., What are the symptoms of diabetes?" required autofocus>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if user_input %}
+            <div class="history">
+                <div class="message user-message">
+                    <h3>User</h3>
+                    <p>{{ user_input | safe }}</p>
+                </div>
+
+                {% if answer %}
+                    <div class="message ai-message">
+                        <h3>AI Assistant</h3>
+                        <p>{{ answer | safe }}</p>
+                    </div>
+                {% else %}
+                    <div class="message ai-message">
+                        <p><em>Generating response, please wait...</em></p>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>Powered by GPT-2 fine-tuned on medical dialogue data. This is for informational purposes only and not a substitute for professional medical advice.</p>
+    </footer>
+</body>
+</html>
